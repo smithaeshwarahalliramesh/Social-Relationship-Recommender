@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>Social Relationship Recommender</title>
+        <link href="../static/recommender.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        
+        <header class="container">
+            <h2>Social Relationship Recommender</h2>
+        </header>
+
+        <form action="/reinforce" method="post">
+            <input type="submit" name="feedback" value="Evaluate Recommender"></input>
+        </form>
+        
+        <br>
+        
+        <div class="grid-container">
+            {% for fname in fl_list %}
+            <div class="grid-item">
+                
+                <img src="../static/person.png"/><br/>
+                {{ fname }}
+                <br>
+                
+                <form action={{ url_for('result', fname = fname) }} method="post">
+                    <input type="submit" name="result_button" value="Accept"></input>
+                    <input type="submit" name="result_button" value="Decline"></input>
+                </form>
+            
+            </div>
+            {% endfor %}
+        </div>​
+
+    </body>
+
+</html>

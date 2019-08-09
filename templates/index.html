@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Social Relationship Recommender</title>
+        <link href="../static/index.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        
+        <header class="container">
+            <h2>Social Relationship Recommender</h2>
+        </header>
+
+        <div class="main" style="width:100%; height: 200px;">
+            
+            <div class="eUser" style="width: 45%; float:left; margin: 0px;">
+                <h1>Existing User</h1>
+                <form method="post">
+                    Select the name:&nbsp;
+                    <input type="text" type="submit"  list="users" name="escreenname" id="escreenname" class="form-control">
+                    <datalist id="users">
+                        {% for user in userList %}
+                            <option>{{user}}</option>
+                        {% endfor %}
+                    </datalist>
+                </form>
+            </div>
+
+            <div class="nUser" style="width: 45%; float:left; margin: 0px;">
+                <h1>New User</h1>
+                <form method="post">
+                    Enter the name:&nbsp;
+                    <input type="text" type="submit" class="form-control" name="escreenname" id="escreenname">
+                </form>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
